@@ -1,4 +1,3 @@
-// Задание 1 к Лекции 4. Спецификация — в README.md этой папки.
 export async function divideAsync(a, b) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
