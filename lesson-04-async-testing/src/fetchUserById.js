@@ -7,5 +7,11 @@ const USERS = [
 ];
 
 export async function fetchUserById(id) {
-  throw new Error("Реализуйте функцию fetchUserById (см. README.md)");
+  return new Promise((resolve, reject) => {
+    if (!id || !(id in USERS)) {
+      reject(new Error("Where's no ID"))
+    } else {
+      resolve(USERS.find((item) => item.id))
+    }
+  })
 }
