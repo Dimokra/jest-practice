@@ -1,4 +1,7 @@
-// Задание 2 к Лекции 5. Спецификация — в README.md этой папки.
 export function fizzBuzz(n) {
-  throw new Error("Реализуйте функцию fizzBuzz (см. README.md)");
+
+    if (!n || typeof n !== "number" || n < 1) {
+    throw new Error("GIVE ME A NUMBER");
+  }
+  return (n % 3 ? '' : 'Fizz') + (n % 5 ? '' : 'Buzz') || (n + '')
 }
