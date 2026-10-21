@@ -1,4 +1,4 @@
-import { fizzBuzz } from "./fizzBuzz.js";
+import { fizzBuzz, FizzBuzzing } from "./fizzBuzz.js";
 
     test.each([
         {num: 20, expectedFizzBuzz: 'Buzz'},
