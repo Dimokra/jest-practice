@@ -1,6 +1,23 @@
 import { createCounter } from "./counter.js";
 
-// Задание 1: напишите ДВА теста. Чтобы они не влияли друг на друга,
-// создавайте свежий счётчик в beforeEach, а не один на весь файл.
+let counter
 
-test.todo("createCounter: свежее состояние через beforeEach, два независимых теста");
+beforeEach(() => {
+    counter = createCounter()    
+    }
+)
+
+test("First test", () => {
+    expect(counter.value).toBe(0)
+})
+
+test("Second test", () => {
+    counter.increment()
+    expect(counter.value).toBe(1)
+})
+
+test("Third test", () => {
+    counter.increment()
+    counter.increment()
+    expect(counter.value).toBe(2)
+})

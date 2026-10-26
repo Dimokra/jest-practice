@@ -1,6 +1,19 @@
 import { saveAll } from "./saveAll.js";
 
-// Задание 2: общий мок save копит вызовы между тестами. Сбрасывайте его
-// в beforeEach, иначе второй тест увидит лишние вызовы.
+let save = jest.fn()
+let storage = {save}
 
-test.todo("saveAll: сброс мока между тестами (beforeEach + mockClear)");
+test("SaveAll test", () => {
+    saveAll(storage, ["Хлеб"])
+    expect(save).toHaveBeenCalledTimes(1)
+})
+
+
+test("SaveAll test", () => {
+    saveAll(storage, ["Хлеб", "Банан"])
+    expect(save).toHaveBeenCalledTimes(2)
+})
+
+afterEach(() => {
+save.mockClear(); 
+});
